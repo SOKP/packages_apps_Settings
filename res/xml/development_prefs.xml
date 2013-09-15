@@ -28,6 +28,9 @@
                 android:targetClass="com.android.settings.SetFullBackupPassword" />
     </PreferenceScreen>
 
+	<Preference android:key="restart_systemui"
+        android:title="@string/restart_systemui" />
+	
     <SwitchPreference
         android:key="keep_screen_on"
         android:title="@string/keep_screen_on"
