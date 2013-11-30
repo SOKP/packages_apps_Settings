@@ -532,4 +532,8 @@
 	<string name="title_general">General</string>
     <string name="lockscreen_targets_message">Lock screen shortcuts</string>
 	
+	<!-- Development shortcut -->
+    <string name="development_shortcut_title">Development shortcut</string>
+    <string name="development_shortcut_summary">Enable application management shortcuts in notification area and recent apps list</string>
+	
 </resources>

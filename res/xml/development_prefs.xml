@@ -77,7 +77,12 @@
 	<com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"
         android:title="@string/disable_fc_notifications_title"
-        android:summary="@string/disable_fc_notifications_summary" />	
+        android:summary="@string/disable_fc_notifications_summary" />
+
+    <CheckBoxPreference
+            android:key="development_shortcut"
+            android:title="@string/development_shortcut_title"
+            android:summary="@string/development_shortcut_summary" />
 
     <ListPreference
         android:key="root_access"
