@@ -28,6 +28,8 @@
     <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="additional_options_title">Additional options</string>
+    <string name="reset_default_message">Reset Default</string>
+
 
     <!-- Privacy Guard -->
     <string name="app_security_title">App security</string>
@@ -544,6 +546,7 @@
     <string name="shortcut_action_media_play_pause">Music - play/pause</string>
     <string name="shortcut_action_media_previous">Music - previous track</string>
     <string name="shortcut_action_wake_device">Wake up device</string>
+    <string name="shortcut_action_theme_switch">Theme Switcher</string>
     <string name="shortcut_action_kill">Kill app</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_lastapp">Last app</string>
@@ -1181,5 +1184,14 @@
     <string name="navigation_edit_button_text">Edit</string>
     <string name="navigation_save_button_text">Save</string>
     <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
+
+    <!-- Themes -->
+    <string name="theme_settings_title">Dark SOKP</string>
+    <string name="theme_auto_mode_title">Switch Theme</string>
+    <string name="theme_auto_mode_off">Manual</string>
+    <string name="theme_auto_mode_lightsensor">On Light condition change (experimental)</string>
+    <string name="theme_auto_mode_twilight">On Daytime</string>
+    <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
+    <string name="theme_reset_message">Reset theme state to default?</string>
 
 </resources>
