@@ -49,6 +49,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
@@ -64,6 +65,7 @@ import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
@@ -76,6 +78,8 @@ import com.android.settings.slim.DisplayRotation;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.cyanogenmod.hardware.TapToWake;
 
 public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnPreferenceClickListener, Indexable {
@@ -98,6 +102,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
     private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
     private static final String KEY_SCREEN_COLOR_SETTINGS = "screencolor_settings";
+    private static final String KEY_TAP_TO_WAKE = "double_tap_wake_gesture";
+    private static final String CATEGORY_ADVANCED = "advanced_display_prefs";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -122,6 +128,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private Preference mScreenSaverPreference;
     private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mAutoBrightnessPreference;
+    private SwitchPreference mTapToWake;
     private SwitchPreference mVolumeWake;
     private ListPreference mLcdDensityPreference;
 
@@ -271,6 +278,13 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
+		PreferenceScreen advancedPrefs = (PreferenceScreen) findPreference(CATEGORY_ADVANCED);
+
+        mTapToWake = (SwitchPreference) findPreference(KEY_TAP_TO_WAKE);
+        if (!isTapToWakeSupported()) {
+            advancedPrefs.removePreference(mTapToWake);
+            mTapToWake = null;
+        }		
     }
 
     private int getDefaultDensity() {
@@ -437,6 +451,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+
+        if (mTapToWake != null) {
+            mTapToWake.setChecked(TapToWake.isEnabled());
+        }
+
         updateState();
         getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
@@ -496,7 +515,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     DreamSettings.getSummaryTextWithDreamName(getActivity()));
         }
     }
-
+    
+    private static boolean isTapToWakeSupported() {
+        try {
+            return TapToWake.isSupported();
+        } catch (NoClassDefFoundError e) {
+            // Hardware abstraction framework not installed
+            return false;
+        }
+	}
     private void writeLcdDensityPreference(final Context context, final int density) {
         final IActivityManager am = ActivityManagerNative.asInterface(
                 ServiceManager.checkService("activity"));
@@ -552,6 +579,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final Resources res = getResources();
         String fontDesc = FontDialogPreference.getFontSizeDescription(res, mCurConfig.fontScale);
         pref.setSummary(getString(R.string.summary_font_size, fontDesc));
+
     }
 
     public void writeFontSizePreference(Object objValue) {
@@ -565,6 +593,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mTapToWake) {
+            return TapToWake.setEnabled(mTapToWake.isChecked());
+        }
+
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -643,6 +675,22 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         return ret;
     }
 
+    /**
+     * Restore the properties associated with this preference on boot
+       @param ctx A valid context
+     */
+    public static void restore(Context ctx) {
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+        if (isTapToWakeSupported()) {
+            final boolean enabled = prefs.getBoolean(KEY_TAP_TO_WAKE,
+                TapToWake.isEnabled());
+            if (!TapToWake.setEnabled(enabled)) {
+                Log.e(TAG, "Failed to restore tap-to-wake settings.");
+            } else {
+                Log.d(TAG, "Tap-to-wake settings restored.");
+            }
+        }
+	}
     public static final Indexable.SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
                 @Override

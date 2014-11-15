@@ -674,5 +674,12 @@
 	<!-- Headphones icon switch -->
     <string name="show_headset_icon_title">Headset icon</string>
     <string name="show_headset_icon_summary">Shows icon when headsets are connected.</string>
+	
+	 <!--- Advanced Settings -->
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="advanced_settings_summary">Enable more settings options</string>
+
+    <!--- Tap To Wake -->
+    <string name="double_tap_to_wake_title">Double-tap to wake</string>
 
 </resources>
