@@ -347,4 +347,8 @@
     <string name="disable_fc_notifications_title">Diable FC Notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
 
+    <!-- Kill app long-press back -->
+    <string name="kill_app_longpress_back">Kill app back button</string>
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back button</string>
+
 </resources>
