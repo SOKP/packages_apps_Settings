@@ -889,4 +889,8 @@
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Slim Actions</string>
 
+    <!-- Battery saver -->
+    <string name="battery_saver_title">Warning color</string>
+    <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
+
 </resources>
