@@ -110,6 +110,13 @@
         android:key="app_circle_bar"
         android:fragment="com.android.settings.sokp.AppCircleBar"
         android:icon="@drawable/ic_appcirclebar"
-		android:title="@string/app_circle_bar_title"/>	
-                   
+		android:title="@string/app_circle_bar_title"/>
+
+	<!-- Wakelock blocker -->
+    <PreferenceScreen
+	    android:key="wakelock_blocker"
+	    android:fragment="com.android.settings.sokp.WakeLockBlocker"
+	    android:title="@string/wakelock_blocker_title"
+	    android:icon="@drawable/ic_menu_save" />
+		
 </PreferenceScreen>
