@@ -1113,4 +1113,8 @@
     <!-- Default alarm ringtone -->
     <string name="alarm_ringtone_title">Default alarm ringtone</string>
 
+    <!-- Linked / unlinked notification volume -->
+    <string name="link_volume_option_title">Link ring and notification volumes</string>
+    <string name="notification_volume_option_title">Notification volume</string>
+
 </resources>
