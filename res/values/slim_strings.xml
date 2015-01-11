@@ -1110,4 +1110,7 @@
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
 
+    <!-- Default alarm ringtone -->
+    <string name="alarm_ringtone_title">Default alarm ringtone</string>
+
 </resources>
