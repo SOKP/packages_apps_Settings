@@ -60,6 +60,11 @@
         android:key="enable_quickboot"
         android:title="@string/enable_quickboot_title"
         android:summary="@string/enable_quickboot_summary" />
+		
+	<com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary" />	
 
     <ListPreference
         android:key="root_access"
