@@ -202,6 +202,7 @@
                 android:taskAffinity=""
                 android:label="@string/wifi_settings"
                 android:configChanges="orientation|keyboardHidden|screenSize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.WIFI_SETTINGS" />
@@ -2226,6 +2227,7 @@
         <activity android:name=".cyanogenmod.PrivacySettings" />
         <activity android:name=".notificationlight.NotificationLightSettings" />
         <activity android:name=".notificationlight.BatteryLightSettings" />
+        <activity android:name=".slim.PerformanceSettings" />
 
         <activity android:name=".sokp.gestureanywhere.GestureAnywhereBuilderActivity" />
         <activity android:name=".sokp.gestureanywhere.GestureAnywhereCreateGestureActivity" />
