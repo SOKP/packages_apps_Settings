@@ -91,6 +91,18 @@
             android:key="lockscreen_visualizer"
             android:title="@string/lockscreen_visualizer_title"
             android:defaultValue="true" />
+			
+		<PreferenceScreen
+            android:key="lock_screen_weather_settings"
+            android:title="@string/lock_screen_weather_settings_title"
+		    android:summary="@string/lock_screen_weather_settings_summary"
+            android:fragment="com.android.settings.sokp.LockScreenWeatherSettings" />
+
+        <PreferenceScreen
+            android:key="lock_screen_color_settings"
+            android:title="@string/colors_title"
+		    android:summary="@string/lock_screen_color_settings_summary"
+            android:fragment="com.android.settings.sokp.LockScreenColorSettings" />		
 
     </PreferenceCategory>
 
