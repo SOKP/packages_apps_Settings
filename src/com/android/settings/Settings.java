@@ -104,5 +104,6 @@ public class Settings extends SettingsActivity {
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LiveDisplayActivity extends SettingsActivity { /* empty */ }
     public static class GestureActivity extends SettingsActivity { /* empty */ }
+    public static class AppCircleBarActivity extends SettingsActivity { /* empty */ }
 }
 
