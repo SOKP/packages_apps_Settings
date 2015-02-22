@@ -156,7 +156,7 @@ public class ClearAllColor extends SettingsPreferenceFragment implements
                             getOwner().refreshSettings();
                         }
                     })
-                    .setPositiveButton(R.string.reset,
+                    .setPositiveButton(R.string.dlg_reset_sokp,
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,

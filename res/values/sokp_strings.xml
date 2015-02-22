@@ -651,5 +651,12 @@
 	<!-- Clear button color -->
     <string name="clear_all_color_title">Clear all icon color</string>
     <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
+	<string name="dlg_reset_values_message">Reset values to\nAndroid- or SOKP default?</string>
+    <string name="dlg_reset_android">Android</string>
+	<string name="dlg_reset_sokp">SOKP</string>
 	
+	<!-- Double Tap Navbar to Sleep -->
+    <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>
+    <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
+
 </resources>
