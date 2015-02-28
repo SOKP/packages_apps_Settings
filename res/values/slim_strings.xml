@@ -467,6 +467,7 @@
     <string name="qs_tile_compass">Compass</string>
     <string name="qs_tile_display_inversion">Color inversion</string>
     <string name="qs_tile_display_rotation">Rotation</string>
+	<string name="qs_tile_slimaction">SlimAction</string>
     <string name="qs_tile_flashlight">Flashlight</string>
     <string name="qs_tile_hotspot">Hotspot</string>
     <string name="qs_tile_location">Location</string>
@@ -488,6 +489,8 @@
     <string name="qs_main_tiles_summary_off">Three or four tiles on each row</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in Quick Settings</string>
+	<string name="qs_slim_action_title">SlimActions</string>
+    <string name="qs_slim_action_summary">Add and set the order of SlimActions for SlimAction tile</string>
 
     <!-- QuickSettings: Tiles: 4 columns -->
     <string name="qs_four_columns_title">Show four tiles per row</string>
