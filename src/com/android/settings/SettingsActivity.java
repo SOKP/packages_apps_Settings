@@ -72,6 +72,7 @@ import com.android.settings.accounts.AccountSyncSettings;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
+import com.android.settings.sokp.gestureanywhere.GestureAnywhereSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
@@ -310,7 +311,8 @@ public class SettingsActivity extends Activity
 			com.android.settings.sokp.SOKPControl.class.getName(),
             ApnSettings.class.getName(),
             ApnSettings.class.getName(),
-            LiveDisplay.class.getName()
+            LiveDisplay.class.getName(),
+            GestureAnywhereSettings.class.getName()
     };
 
     private static final String[] LIKE_SHORTCUT_INTENT_ACTION_ARRAY = {

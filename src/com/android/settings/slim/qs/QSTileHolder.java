@@ -161,6 +161,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_reboot_recovery";
                 stringId = R.string.qs_tile_slimaction;
                 break;
+            case QSConstants.TILE_GESTURE:
+                resourceName = "ic_qs_gestures_on";
+                stringId = R.string.qs_gesture_tile;
+                break;
             default:
                 return null;
         }
