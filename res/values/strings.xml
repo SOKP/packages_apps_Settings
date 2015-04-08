@@ -5275,6 +5275,7 @@
 
     <!-- MultiSim Settings changes-->
     <string name="close_dialog">OK</string>
+	<string name="sim_enabler_sim">SIM</string>
     <string name="sim_enabler_title">SIM Enablers</string>
     <string name="sim_enabler_summary">SIM is %1$s</string>
     <string name="sim_enabled">enabled</string>
