@@ -27,6 +27,10 @@
             android:summary="@string/unlock_set_unlock_mode_none"
             android:persistent="false"/>
 
+		<SwitchPreference
+            android:key="lockscreen_bottom_shortcuts"
+            android:title="@string/lockscreen_bottom_shortcuts_title"/>		
+			
         <PreferenceScreen
                  android:key="lockscreen_shortcuts"
                  android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"

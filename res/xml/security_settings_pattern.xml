@@ -44,6 +44,10 @@
         <SwitchPreference
             android:key="power_button_instantly_locks"
             android:title="@string/lockpattern_settings_enable_power_button_instantly_locks"/>
+			
+		<SwitchPreference
+            android:key="lockscreen_bottom_shortcuts"
+            android:title="@string/lockscreen_bottom_shortcuts_title"/>	
 
         <PreferenceScreen
                  android:key="lockscreen_shortcuts"
