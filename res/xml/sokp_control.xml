@@ -101,6 +101,7 @@
     <PreferenceScreen
         android:key="app_circle_bar"
         android:fragment="com.android.settings.sokp.AppCircleBar"
-        android:title="@string/app_circle_bar_title"/>	
+        android:icon="@drawable/ic_appcirclebar"
+		android:title="@string/app_circle_bar_title"/>	
                    
 </PreferenceScreen>
