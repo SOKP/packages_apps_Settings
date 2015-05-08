@@ -93,8 +93,8 @@
                 android:title="@string/model_number"
                 android:summary="@string/device_info_default"/>
 
-        <!-- Device hardware processor infol -->
-        <Preference android:key="device_processor"
+        <!-- Device cpu info -->
+        <Preference android:key="device_cpu"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/processor_info"
                 android:summary="@string/device_info_default"/>
@@ -104,6 +104,12 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/sokp_version_title"
                 android:summary="@string/sokp_version_default"/>
+
+        <!-- Device mem info -->
+        <Preference android:key="device_memory"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mem_info"
+                android:summary="@string/device_info_default"/>
 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version" 
@@ -127,18 +133,6 @@
         <Preference android:key="kernel_version" 
                 style="?android:preferenceInformationStyle"
                 android:title="@string/kernel_version"
-                android:summary="@string/device_info_default"/>
-
-        <!-- Device cpu info -->
-        <Preference android:key="device_cpu"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/cpu_info"
-                android:summary="@string/device_info_default"/>
-
-        <!-- Device mem info -->
-        <Preference android:key="device_memory"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
         <!-- Detailed build version -->
