@@ -648,4 +648,8 @@
     <string name="fingerprint_enrollment_error_title_4">Uh oh, try again</string>
     <string name="fingerprint_enrollment_error_title_5">Whoops, there was an error</string>
 	
+	<!-- Clear button color -->
+    <string name="clear_all_color_title">Clear all icon color</string>
+    <string name="notification_drawer_clear_all_icon_color_title">Clear all icon</string>
+	
 </resources>

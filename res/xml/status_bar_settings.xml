@@ -70,6 +70,11 @@
         android:title="@string/double_tap_to_sleep_title"
         android:summary="@string/double_tap_to_sleep_summary"
         android:defaultValue="true" />
+		
+	<PreferenceScreen
+            android:key="clear_all_color"
+            android:fragment="com.android.settings.sokp.ClearAllColor"
+            android:title="@string/clear_all_color_title" />	
 
     <PreferenceScreen
             android:key="network_traffic_state"
