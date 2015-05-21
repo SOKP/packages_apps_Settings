@@ -180,6 +180,9 @@ public class QSTileHolder {
             case QSConstants.TILE_NAVBAR:
                 resourceName = "ic_qs_navbar_on";
                 stringId = R.string.qs_navbar_tile;
+            case QSConstants.TILE_EXPANDED_DESKTOP:
+                resourceName = "ic_qs_expanded_desktop";
+                stringId = R.string.qs_tile_expanded_desktop;
                 break;
             default:
                 return null;
