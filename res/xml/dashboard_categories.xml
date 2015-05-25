@@ -75,6 +75,14 @@
             android:id="@+id/personalization_section"
             android:title="@string/header_category_personalization" >
 
+		<!-- SOKP Control -->
+		<dashboard-tile	
+		        android:id="@+id/sokp_control"
+                android:title="@string/sokp_control"
+                android:fragment="com.android.settings.sokp.SOKPControl"
+                android:icon="@drawable/ic_sokp_control"
+                /> 	
+			
         <!-- Interface -->
         <dashboard-tile
                 android:id="@+id/interface_settings"

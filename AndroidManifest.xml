@@ -2016,6 +2016,7 @@
                 android:resource="@id/notification_settings" />
         </activity>
 
+
         <!-- Show application-level notification settings (app passed in as extras) -->
         <activity android:name="Settings$AppNotificationSettingsActivity"
                 android:label="@string/app_notifications_title"
@@ -2030,6 +2031,21 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/notification_settings" />
         </activity>
+		
+		 <!-- SOKP Control -->
+        <activity android:name="Settings$SOKPControlActivity"
+            android:label="@string/sokp_control"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.sokp.SOKPControl" />
+        </activity>
+ 
+        <activity
+            android:name=".sokp.SOKPControl" />
 
         <!-- Show regulatory info (from settings item or dialing "*#07#") -->
         <activity android:name="RegulatoryInfoDisplayActivity"

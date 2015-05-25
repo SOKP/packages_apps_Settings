@@ -111,6 +111,7 @@ import com.android.settings.widget.SwitchBar;
 import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
+import com.android.settings.sokp.SOKPControl;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -240,6 +241,7 @@ public class SettingsActivity extends Activity
             R.id.print_settings,
             R.id.nfc_payment_settings,
             R.id.home_settings,
+			R.id.sokp_control,
             R.id.dashboard
     };
 
@@ -304,6 +306,7 @@ public class SettingsActivity extends Activity
             AppNotificationSettings.class.getName(),
             OtherSoundSettings.class.getName(),
             QuickLaunchSettings.class.getName(),
+			com.android.settings.sokp.SOKPControl.class.getName(),
             ApnSettings.class.getName()
     };
 
