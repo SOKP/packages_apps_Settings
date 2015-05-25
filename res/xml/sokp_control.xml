@@ -19,6 +19,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/sokp_control" >
 
+	<!-- SOKP logo -->
+		<PreferenceScreen android:key="sokp_logo"
+            android:layout="@layout/sokp_rom_logo" />
     
 
 </PreferenceScreen>
