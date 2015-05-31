@@ -836,7 +836,7 @@
         <item>1</item>
         <item>2</item>
     </string-array>
-
+	
 	<string-array name="shortcut_action_tile_entries">
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_power_menu</item>
@@ -938,6 +938,19 @@
         <item>@string/screen_recorder_bitrate_5000000</item>
         <item>@string/screen_recorder_bitrate_10000000</item>
         <item>@string/screen_recorder_bitrate_20000000</item>
+    </string-array>
+	
+	<!-- Recent panel -->
+    <string-array name="recent_panel_expanded_mode_entries">
+        <item>@string/recent_panel_expanded_mode_auto</item>
+        <item>@string/recent_panel_expanded_mode_always</item>
+        <item>@string/recent_panel_expanded_mode_never</item>
+    </string-array>
+
+    <string-array name="recent_panel_expanded_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
 </resources>
