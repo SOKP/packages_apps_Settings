@@ -126,6 +126,12 @@
         android:fragment="com.android.settings.sokp.AppCircleBar"
         android:icon="@drawable/ic_appcirclebar"
 		android:title="@string/app_circle_bar_title"/>
+		
+	<PreferenceScreen
+        android:key="recent_panel"
+		android:icon="@drawable/ic_settings_recents"
+        android:fragment="com.android.settings.slim.RecentPanel"
+        android:title="@string/recent_panel_category" />	
 
 	<!-- Wakelock blocker -->
     <PreferenceScreen
