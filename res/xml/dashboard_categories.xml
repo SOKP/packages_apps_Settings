@@ -107,7 +107,7 @@
 		        android:id="@+id/sokp_control"
                 android:title="@string/sokp_control"
                 android:fragment="com.android.settings.sokp.SOKPControl"
-                android:icon="@drawable/ic_sokp_control"
+                android:icon="@drawable/ic_settings_display"
                 /> 				
               
     </dashboard-category>
