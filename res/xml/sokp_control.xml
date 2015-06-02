@@ -40,7 +40,7 @@
         android:key="quick_settings"
         android:fragment="com.android.settings.slim.QsSettings"
         android:title="@string/qs_title" 
-	    android:icon="@drawable/ic_settings_notification_drawer	/>
+	    android:icon="@drawable/ic_settings_notification_drawer" />
 
     <!-- Status Bar -->
 	<PreferenceScreen
