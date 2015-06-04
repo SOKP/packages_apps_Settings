@@ -81,9 +81,8 @@
     <PreferenceScreen
         android:key="live_display"
         android:title="@string/live_display_title"
-        android:summary="@string/live_display_summary"
         android:fragment="com.android.settings.livedisplay.LiveDisplay" 
-		android:icon="@drawable/ic_settings_interface" />	
+		android:icon="@drawable/ic_bt_laptop" />	
      
     <!-- Notifications -->
     <PreferenceScreen
