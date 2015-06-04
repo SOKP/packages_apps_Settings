@@ -76,6 +76,14 @@
         android:title="@string/display_settings"
         android:fragment="com.android.settings.DisplaySettings" 
 	    android:icon="@drawable/ic_settings_display" />
+		
+	<!-- LiveDisplay -->
+    <PreferenceScreen
+        android:key="live_display"
+        android:title="@string/live_display_title"
+        android:summary="@string/live_display_summary"
+        android:fragment="com.android.settings.livedisplay.LiveDisplay" 
+		android:icon="@drawable/ic_settings_interface" />	
      
     <!-- Notifications -->
     <PreferenceScreen
