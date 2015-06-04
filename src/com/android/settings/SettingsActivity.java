@@ -307,12 +307,11 @@ public class SettingsActivity extends Activity
             AppNotificationSettings.class.getName(),
             OtherSoundSettings.class.getName(),
             QuickLaunchSettings.class.getName(),
-			com.android.settings.sokp.SOKPControl.class.getName()
-            ApnSettings.class.getName()
+			com.android.settings.sokp.SOKPControl.class.getName(),
+            ApnSettings.class.getName(),
             ApnSettings.class.getName(),
             LiveDisplay.class.getName()
     };
-
 
     private static final String[] LIKE_SHORTCUT_INTENT_ACTION_ARRAY = {
             "android.settings.APPLICATION_DETAILS_SETTINGS"
