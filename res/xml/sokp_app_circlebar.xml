@@ -19,12 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/category_app_circle_bar_title" >
 
-    <com.android.settings.sokp.SystemSettingSwitchPreference
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="enable_app_circle_bar"
         android:title="@string/app_circle_bar_title"
         android:summary="@string/app_circle_bar_summary" />
 
-    <com.android.settings.liquid.util.AppMultiSelectListPreference
+    <com.android.settings.sokp.util.AppMultiSelectListPreference
         android:key="app_circle_bar_included_apps"
         android:persistent="false"
         android:title="@string/app_circle_bar_included_apps_title"
