@@ -53,7 +53,7 @@ import com.android.settings.Utils;
 import com.android.settings.sokp.util.CMDProcessor;
 import com.android.settings.sokp.util.Helpers;
 import com.android.settings.sokp.util.AppMultiSelectListPreference;
-import com.android.settings.sokp.SeekBarPreferenceCham;
+import com.android.settings.widget.SeekBarPreferenceCham;
 
 import java.io.File;
 import java.lang.Thread;
