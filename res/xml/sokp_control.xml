@@ -95,6 +95,7 @@
     <PreferenceScreen
     	android:key="gesture_anywhere"
     	android:fragment="com.android.settings.sokp.gestureanywhere.GestureAnywhereSettings"
+		android:icon="@drawable/ic_settings_gestures"
 	    android:title="@string/gesture_anywhere_title" />
 
 	<!-- Circle app bar -->
