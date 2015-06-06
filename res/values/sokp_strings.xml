@@ -228,6 +228,7 @@
     <!-- ListView animation -->
     <string name="listview_category">ListView Animation</string>
     <string name="listview_animation_title">ListView Animation</string>
+    <string name="listview_animation_summary">Set custom listview animation</string>
     <string name="aokp_animation_summary">View or change listview animations</string>
     <string name="listview_off">Off</string>
     <string name="listview_wave_left">Wave (Left)</string>
