@@ -485,7 +485,6 @@
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
 	<string name="qs_gesture_tile">Gesture Anywhere</string>
 	<string name="qs_appcirclebar_tile">App Circle Bar</string>
-	<string name="qs_tile_heads_up">Heads up</string>
     <string name="qs_tile_screenshot">Screenshot</string>
 
     <string name="qs_main_tiles_title">Enlarge first row</string>
