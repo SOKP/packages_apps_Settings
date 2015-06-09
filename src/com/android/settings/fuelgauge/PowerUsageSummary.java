@@ -62,8 +62,8 @@ public class PowerUsageSummary extends PreferenceFragment {
     private static final String BATTERY_HISTORY_FILE = "tmp_bat_history.bin";
 
     private static final int MENU_STATS_TYPE = Menu.FIRST;
-    private static final int MENU_STATS_REFRESH = Menu.FIRST + 1;
-    private static final int MENU_BATTERY_SAVER = Menu.FIRST + 2;
+    private static final int MENU_STATS_REFRESH = Menu.FIRST + 2;
+    private static final int MENU_BATTERY_SAVER = Menu.FIRST + 1;
     private static final int MENU_HELP = Menu.FIRST + 3;
 
     private UserManager mUm;
