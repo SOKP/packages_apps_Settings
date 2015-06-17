@@ -18,6 +18,8 @@ package com.android.settings.slim;
 
 import android.content.ContentResolver;
 import android.database.ContentObserver;
+import android.content.Context;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.ListPreference;
@@ -53,11 +55,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_BATTERY_STYLE_HIDDEN = "4";
     private static final String STATUS_BAR_BATTERY_STYLE_TEXT = "6";
+    private static final String KEY_BREATHING_NOTIFICATIONS = "breathing_notifications";
 
     private SwitchPreference mStatusBarBrightnessControl;
     private PreferenceScreen mClockStyle;
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
+    private Preference mBreathingNotifications;
 
     private int mbatteryStyle;
     private int mbatteryShowPercent;
@@ -70,7 +74,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         addPreferencesFromResource(R.xml.status_bar_settings);
 
         ContentResolver resolver = getActivity().getContentResolver();
-
+        Context context = getActivity();
+        ConnectivityManager cm = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+				
         PreferenceScreen prefSet = getPreferenceScreen();
 
         // Start observing for changes on auto brightness
@@ -109,6 +116,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(String.valueOf(mbatteryStyle));
+
+        // Breathing notifications
+        mBreathingNotifications = (Preference) findPreference(KEY_BREATHING_NOTIFICATIONS);
+        if(!cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+            prefSet.removePreference(mBreathingNotifications);
+        }
 
     }
 
