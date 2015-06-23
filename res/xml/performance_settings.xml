@@ -34,6 +34,17 @@
             android:title="@string/autoperf_title"
             android:summary="@string/autoperf_summary"
             android:defaultValue="true" />
+		
+        <PreferenceScreen
+            android:key="key_kernel_adiutor"
+            android:title="@string/kernel_adiutor_title"
+            android:summary="@string/kernel_adiutor_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.grarak.kerneladiutor"
+                android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </PreferenceScreen>		
+			
     </PreferenceCategory>
 
 </PreferenceScreen>

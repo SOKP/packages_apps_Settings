@@ -27,6 +27,10 @@
 	
 	<!-- SOKP Statistics -->
 	<string name="sokp_stats">SOKP Statistics</string>
+	
+    <!-- Kernel Adiutor -->
+	<string name="kernel_adiutor_title">Kernel Adiutor</string>
+    <string name="kernel_adiutor_summary">Tweak kernel parameters. Warning! This may cause instability!</string>
 
 	<!--- Advanced Settings -->
     <string name="advanced_settings">Advanced settings</string>
