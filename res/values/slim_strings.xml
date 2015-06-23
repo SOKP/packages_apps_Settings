@@ -482,7 +482,7 @@
     <string name="qs_tile_screen_timeout">Screen timeout</string>
     <string name="qs_tile_sync">Sync</string>
     <string name="qs_tile_usb_tether">USB tethering</string>
-    <string name="qs_tile_visualizer">AudioFX</string>
+    <string name="qs_tile_visualizer">Dolby</string>
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
 	<string name="qs_gesture_tile">Gesture Anywhere</string>
 	<string name="qs_appcirclebar_tile">App Circle Bar</string>

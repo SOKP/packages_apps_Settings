@@ -126,7 +126,7 @@ public class QSTileHolder {
                 stringId = R.string.qs_tile_lockscreen;
                 break;
             case QSConstants.TILE_VISUALIZER:
-                resourceName = "ic_qs_visualizer_static";
+                resourceName = "ic_qs_dolby";
                 stringId = R.string.qs_tile_visualizer;
                 break;
             case QSConstants.TILE_SYNC:
