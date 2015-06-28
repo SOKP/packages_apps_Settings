@@ -390,5 +390,9 @@
     <string name="overscroll_summary">Choose how scrollable objects look when they overshoot</string>
     <string name="overscroll_weight_title">Over scrolling weight</string>
     <string name="overscroll_weight_summary">Select the weight of the scrollable objects</string>
+	
+	 <!-- Floating Windows -->
+    <string name="slim_action_floats">Slim Actions and Pie</string>
+    <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
 		
 </resources>
