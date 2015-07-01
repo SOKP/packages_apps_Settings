@@ -141,11 +141,19 @@
 	    android:title="@string/wakelock_blocker_title"
 	    android:icon="@drawable/ic_menu_save" />
 		
+	<!-- Screen Recorder -->	
 	<PreferenceScreen
         android:key="screen_recorder"
 		android:icon="@drawable/ic_settings_dock"
         android:title="@string/screen_recorder_title"
         android:fragment="com.android.settings.slim.ScreenRecorderSettings" >
 	</PreferenceScreen>
+	
+	<!-- Misc Options -->
+    <PreferenceScreen
+        android:id="@+id/misc_settings"
+        android:title="@string/misc_settings_title"
+        android:fragment="com.android.settings.sokp.MiscSettings"
+        android:icon="@drawable/ic_sokp_misc_teal" />
 	
 </PreferenceScreen>

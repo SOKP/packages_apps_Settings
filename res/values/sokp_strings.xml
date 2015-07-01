@@ -24,6 +24,7 @@
 	
 	<!-- SOKP Control -->
     <string name="sokp_control">SOKP Control</string>
+	<string name="misc_settings_title">SOKP Misc</string>
 	
 	<!-- SOKP Statistics -->
 	<string name="sokp_stats">SOKP Statistics</string>
