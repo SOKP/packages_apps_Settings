@@ -410,4 +410,6 @@
 	<!-- Restart SystemUI -->
     <string name="restart_systemui">Restart SystemUI</string>
 	<string name="qs_systemui_restart_tile">Restart SystemUI</string>
+	<string name="shortcut_action_restartui">Restart SystemUI</string>
+	
 </resources>
