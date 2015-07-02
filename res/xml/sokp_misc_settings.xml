@@ -61,5 +61,7 @@
                     android:value="com.cyanogenmod.lockclock.preference.CalendarPreferences" />
             </intent>
         </PreferenceScreen>
+		
+	</PreferenceCategory>
 	
 </PreferenceScreen>
