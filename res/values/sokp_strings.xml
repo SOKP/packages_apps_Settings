@@ -403,7 +403,9 @@
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
 	<string name="gesture_anywhere_floating">Gesture Anywhere</string>
     <string name="gesture_anywhere_floating_summary">Launch shortcuts in float mode</string>
-	
+	<string name="appcirclebar_floating_window_title">AppCircleBar</string>
+    <string name="appcirclebar_floating_window_summary">Launch apps that are located in AppCircleBar in float mode</string>
+		
 	<!-- Breathing Notifications -->
     <string name="breathing_notifications_title">Breathing notifications</string>
     <string name="sms_breath_title">Breathing SMS</string>
