@@ -399,7 +399,7 @@
     <string name="slim_action_floats">Slim Actions and Pie</string>
     <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
 	<string name="category_floating_window">Floating window</string>
-	<string name="heads_up_floating_window_title">Float mode</string>
+	 <string name="heads_up_floating_window_title">Heads Up</string>
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
 	
 	<!-- Breathing Notifications -->
