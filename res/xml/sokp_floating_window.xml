@@ -17,7 +17,12 @@
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:title="@string/category_floating_window">
 
-     
+    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
+        android:key="gesture_anywhere_floating"
+        android:title="@string/gesture_anywhere_floating"
+        android:summary="@string/gesture_anywhere_floating_summary"
+        android:defaultValue="false" />
+
     <!-- HeadsUp floating mode switch -->
     <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
         android:key="heads_up_floating"
