@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2015 The Sonic Open Kang Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<?xml version="1.0" encoding="utf-8"?>
  <PreferenceScreen
      xmlns:android="http://schemas.android.com/apk/res/android"
      android:title="@string/category_floating_window"
@@ -29,13 +29,6 @@
         android:key="gesture_anywhere_floating"
         android:title="@string/gesture_anywhere_floating"
         android:summary="@string/gesture_anywhere_floating_summary"
-        android:defaultValue="false" />
-
-    <!-- HeadsUp floating mode switch -->
-    <com.android.settings.cyanogenmod.SystemSettingSwitchPreference
-        android:key="heads_up_floating"
-        android:title="@string/heads_up_floating_window_title"
-        android:summary="@string/heads_up_floating_window_summary"
         android:defaultValue="false" />
 
     <!-- Sliim Action floating mode switch -->

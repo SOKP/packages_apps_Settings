@@ -398,6 +398,8 @@
 	 <!-- Floating Windows -->
     <string name="slim_action_floats">Slim Actions and Pie</string>
     <string name="slim_action_floats_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
+	<string name="slim_action_floating_window_title">Launch Slim and Pie Actions in Floating Window Mode</string>
+	<string name="slim_action_floating_window_summary">Launch Slim and Pie Actions in Floating Window Mode</string>
 	<string name="category_floating_window">Floating window</string>
 	 <string name="heads_up_floating_window_title">Heads Up</string>
     <string name="heads_up_floating_window_summary">Longpress and release to open in float mode when not on home screen</string>
@@ -559,5 +561,7 @@
     <string name="recents_clear_all_dismiss_all_summary">Choose whether to dismiss all tasks or ignore the foreground task</string>
 	<string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+	<string name="recents_show_searchbar">Show search bar in recents menu</string>
+	<string name="recents_show_searchbar_summary">Enabel/Disable search bar in recents menu</string>
 	
 </resources>
