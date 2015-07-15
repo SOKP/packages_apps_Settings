@@ -25,7 +25,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ServiceInfo;
-import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
@@ -39,7 +38,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
@@ -80,10 +78,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private static final String KEY_NOTIFICATION = "notification";
     private static final String KEY_LOCK_SCREEN_NOTIFICATIONS = "lock_screen_notifications";
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
-    private static final String PREF_HEADS_UP_GLOBAL_SWITCH = "heads_up_global_switch";
-    private static final String PREF_HEADS_UP_SNOOZE_TIME = "heads_up_snooze_time";
-    private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
-    private static final String KEY_USE_NON_INTRUSIVE_CALL = "use_non_intrusive_call";
 
     // Notification and Battery Light
     private static final String KEY_NOTIFICATION_LIGHT = "notification_light";
@@ -108,7 +102,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private Preference mPhoneRingtonePreference;
     private Preference mNotificationRingtonePreference;
     private TwoStatePreference mVibrateWhenRinging;
-    private TwoStatePreference mUseNonIntrusiveCall;
     private DropDownPreference mLockscreen;
     private Preference mNotificationAccess;
     private boolean mSecure;
@@ -118,10 +111,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private Preference mAlarmRingtonePreference;
     private SwitchPreference mVolumeLinkNotification;
     private PreferenceCategory mSoundCategory;
-
-    private ListPreference mHeadsUpGlobalSwitch;
-    private ListPreference mHeadsUpSnoozeTime;
-    private ListPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -167,73 +156,11 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 findPreference(KEY_NOTIFICATION);
         initPulse(notification);
         initLockscreenNotifications(notification);
-        initNonIntrusiveCall(notification);
 
         mNotificationAccess = findPreference(KEY_NOTIFICATION_ACCESS);
         refreshNotificationListeners();
         updateRingerMode();
         updateEffectsSuppressor();
-
-        Resources systemUiResources;
-        try {
-            systemUiResources =
-                    getPackageManager().getResourcesForApplication("com.android.systemui");
-        } catch (Exception e) {
-            return;
-        }
-
-        mHeadsUpSnoozeTime = (ListPreference) findPreference(PREF_HEADS_UP_SNOOZE_TIME);
-        mHeadsUpSnoozeTime.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                int headsUpSnoozeTime = Integer.valueOf((String) newValue);
-                updateHeadsUpSnoozeTimeSummary(headsUpSnoozeTime);
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.HEADS_UP_SNOOZE_TIME,
-                        headsUpSnoozeTime);
-            }
-        });
-        final int defaultSnoozeTime = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_snooze_time", null, null));
-        final int headsUpSnoozeTime = Settings.System.getInt(getContentResolver(),
-                Settings.System.HEADS_UP_SNOOZE_TIME, defaultSnoozeTime);
-        mHeadsUpSnoozeTime.setValue(String.valueOf(headsUpSnoozeTime));
-        updateHeadsUpSnoozeTimeSummary(headsUpSnoozeTime);
-
-        mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
-        mHeadsUpTimeOut.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                int headsUpTimeOut = Integer.valueOf((String) newValue);
-                updateHeadsUpTimeOutSummary(headsUpTimeOut);
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.HEADS_UP_NOTIFCATION_DECAY,
-                        headsUpTimeOut);
-            }
-        });
-        final int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
-                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
-        final int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
-                Settings.System.HEADS_UP_NOTIFCATION_DECAY, defaultTimeOut);
-        mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
-        updateHeadsUpTimeOutSummary(headsUpTimeOut);
-
-        mHeadsUpGlobalSwitch = (ListPreference) findPreference(PREF_HEADS_UP_GLOBAL_SWITCH);
-        mHeadsUpGlobalSwitch.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                int headsUpGlobalSwitch = Integer.valueOf((String) newValue);
-                updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.HEADS_UP_GLOBAL_SWITCH,
-                        headsUpGlobalSwitch);
-            }
-        });
-        final int headsUpGlobalSwitch = Settings.System.getInt(getContentResolver(),
-                Settings.System.HEADS_UP_GLOBAL_SWITCH, 1);
-        mHeadsUpGlobalSwitch.setValue(String.valueOf(headsUpGlobalSwitch));
-        updateHeadsUpGlobalSwitchSummary(headsUpGlobalSwitch);
-
     }
 
     @Override
@@ -258,48 +185,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         mVolumeCallback.stopSample();
         mSettingsObserver.register(false);
         mReceiver.register(false);
-    }
-
-    private void updateHeadsUpGlobalSwitchSummary(int value) {
-        String summary;
-        switch (value) {
-            case 0:     summary = getResources().getString(
-                                    R.string.heads_up_global_switch_summary_disabled);
-                        mHeadsUpSnoozeTime.setEnabled(false);
-                        mHeadsUpTimeOut.setEnabled(false);
-                        break;
-            case 1:     summary = getResources().getString(
-                                    R.string.heads_up_global_switch_summary_perapp);
-                        mHeadsUpSnoozeTime.setEnabled(true);
-                        mHeadsUpTimeOut.setEnabled(true);
-                        break;
-            case 2:     summary = getResources().getString(
-                                    R.string.heads_up_global_switch_summary_forced);
-                        mHeadsUpSnoozeTime.setEnabled(true);
-                        mHeadsUpTimeOut.setEnabled(true);
-                        break;
-            default:    summary = "";
-                        break;
-        }
-        mHeadsUpGlobalSwitch.setSummary(summary);
-    }
-
-    private void updateHeadsUpSnoozeTimeSummary(int value) {
-        String summary = value != 0
-                ? getResources().getString(R.string.heads_up_snooze_summary, value / 60 / 1000)
-                : getResources().getString(R.string.heads_up_snooze_disabled_summary);
-        mHeadsUpSnoozeTime.setSummary(summary);
-    }
-
-    private void updateHeadsUpTimeOutSummary(int value) {
-        String summary = getResources().getString(R.string.heads_up_time_out_summary,
-                value / 1000);
-        if (value == 0) {
-            mHeadsUpTimeOut.setSummary(
-                    getResources().getString(R.string.heads_up_time_out_never_summary));
-        } else {
-            mHeadsUpTimeOut.setSummary(summary);
-        }
     }
 
     // === Volumes ===
@@ -545,35 +430,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 com.android.internal.R.bool.config_intrusiveBatteryLed)) {
             parent.removePreference(parent.findPreference(KEY_BATTERY_LIGHT));
         }
-    }
-
-    // === Non-intrusive InCall UI ===
-
-    private void initNonIntrusiveCall(PreferenceCategory parent) {
-        mUseNonIntrusiveCall = 
-           (TwoStatePreference) parent.findPreference(KEY_USE_NON_INTRUSIVE_CALL);
-        if (mUseNonIntrusiveCall == null) {
-            Log.i(TAG, "Preference not found: " + KEY_USE_NON_INTRUSIVE_CALL);
-            return;
-        }
-
-        mUseNonIntrusiveCall.setPersistent(false);
-        updateNonIntrusiveCall();
-        mUseNonIntrusiveCall.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                final boolean val = (Boolean) newValue;
-                return Settings.System.putInt(getContentResolver(),
-                        Settings.System.USE_NON_INTRUSIVE_CALL,
-                        val ? 1 : 0);
-            }
-        });
-    }
-
-    private void updateNonIntrusiveCall() {
-        if (mUseNonIntrusiveCall == null) return;
-        mUseNonIntrusiveCall.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.USE_NON_INTRUSIVE_CALL, 1) != 0);
     }
 
     // === Lockscreen (public / private) notifications ===
