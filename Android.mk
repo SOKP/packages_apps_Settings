@@ -29,6 +29,7 @@ LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
