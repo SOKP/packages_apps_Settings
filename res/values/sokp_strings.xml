@@ -681,5 +681,9 @@
 
     <!--- Tap To Wake -->
     <string name="double_tap_to_wake_title">Double-tap to wake</string>
+	
+	 <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
 
 </resources>
