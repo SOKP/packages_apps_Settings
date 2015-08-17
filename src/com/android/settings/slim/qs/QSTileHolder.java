@@ -184,6 +184,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_expanded_desktop";
                 stringId = R.string.qs_tile_expanded_desktop;
 				break;
+            case QSConstants.TILE_VOLUME:
+                resourceName = "ic_qs_volume_panel";
+                stringId = R.string.qs_tile_volume_panel;
+                break;	
             case QSConstants.TILE_SLIM_FLOATS:
                 resourceName = "ic_qs_floating_on";
                 stringId = R.string.qs_tile_slim_floats;
