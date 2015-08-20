@@ -78,6 +78,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
 	private static final String KEY_SOKP_VERSION = "sokp_version";
+	private static final String KEY_SM_AND = "sm_android";
+    private static final String KEY_SM_KERNEL = "sm_kernel";
+    private static final String KEY_SM_FLAGS = "sm_flags";
 	private static final String KEY_SLIM_BUILD_DATE = "build_date";
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
@@ -101,6 +104,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
         findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
 		setValueSummary(KEY_SOKP_VERSION, "ro.sokp.version");
+		findPreference(KEY_SM_KERNEL).setEnabled(true);
+        findPreference(KEY_SM_FLAGS).setEnabled(true);
+        setValueSummary(KEY_SM_AND, "ro.sm.android");
+        setValueSummary(KEY_SM_KERNEL, "ro.sm.kernel");
+        setValueSummary(KEY_SM_FLAGS, "ro.sm.flags");
 		setValueSummary(KEY_SLIM_BUILD_DATE, "ro.build.date");
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
