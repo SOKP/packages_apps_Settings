@@ -1090,7 +1090,7 @@
 
     <!-- Themes -->
     <string-array name="theme_auto_mode_entries">
-        <item>@string/heme_auto_mode_off</item>
+        <item>@string/theme_auto_mode_off</item>
         <item>@string/theme_auto_mode_lightsensor</item>
         <item>@string/theme_auto_mode_twilight</item>
     </string-array>
