@@ -1196,4 +1196,7 @@
     <string name="theme_auto_switch_mode_error">Automatic light condition change mode is enabled. Manual switching is not possible.</string>
     <string name="theme_reset_message">Reset theme state to default?</string>
 
+    <!-- Lock screen rotation -->
+    <string name="display_lockscreen_rotation_title">Lock screen</string>
+
 </resources>
