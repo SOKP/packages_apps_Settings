@@ -133,23 +133,7 @@
         <Preference android:key="sokp_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/sokp_version_title"
-                android:summary="@string/sokp_version_default"/>
-
-		<!-- GCC build info -->
-        <Preference android:key="sm_android"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/sm_android"
-                android:summary="@string/sm_android_default" />
-
-        <Preference android:key="sm_kernel"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/sm_kernel"
-                android:summary="@string/sm_kernel_default" />
-
-        <Preference android:key="sm_flags"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/sm_flags"
-                android:summary="@string/sm_flags_default" />		
+                android:summary="@string/sokp_version_default"/>		
 
         <!-- Detailed build version -->
         <Preference android:key="build_number" 
